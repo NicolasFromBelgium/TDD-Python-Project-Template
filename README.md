@@ -9,15 +9,6 @@ This template contains everything you need to practice **real TDD** from the ver
 - Complete GitHub Actions CI (lint + type checking + tests on Python 3.11/3.12)
 - 2 demo tests to force you to follow the Red → Green → Refactor cycle
 
-## The 2 Demo Tests (Essential for Understanding TDD)
-
-1. **`test_project_has_at_least_one_test`** → **Should pass**  
-   (There are already 2 tests in the project.)
-
-2. **`test_project_has_new_files`** → **Intentionally fails at the beginning**  
-   Clear message:  
-   > "Create src/tdd_template/main.py (or any new file) first!  
-   > Remember the TDD rule: **Write the TEST before the code!**"
 
 ## How to Use This Template
 
@@ -27,10 +18,28 @@ This template contains everything you need to practice **real TDD** from the ver
 4. `pip install -r requirements-dev.txt`
 5. `pre-commit install`
 6. `git add . && git commit -m "chore: initial TDD template setup"`
-7. **Run the tests**: `pytest`
+7. **Run the tests**: `pytest` 
+8. Test 1 should pass if installation went fine
+9. Test 2 should fail, it's NORMAL (it tests if there is a file in src/tdd_template/)
+10. Do not change anything. Commit and push the template to your github repo
+11. Go to your Github repo, check actions, you will see a workflow on failed (because the test 2 failed!)
+12. Now go to directory : src/tdd_template (cd tdd_template)
+13. Create a file main.py(nano main.py), write some valid python 
+14. commit and push again, the new workflow action should be on PASSED (test 2 is now OK)
+15. BINGO, you did your first Test Driven Development workflow
 
-→ First test should work → Basic check for TDD and CI, base requirements are OK if test is passed
-→ You will see second test  failing → **this is normal and intentional! TDD principle**
+The existing 2 Demo CI tests are here : tests/unit/test_demo.py
+
+## The 2 Demo Tests (Essential for Understanding TDD)
+
+1. **`test_project_has_at_least_one_test`** → **Always passes**  
+   (There are already 2 tests in the project, it will confirm that CI is functional.)
+
+2. **`test_project_has_new_files`** → **Intentionally fails at the beginning**  
+   Clear message:  
+  
+   > Remember the TDD rule: **Write the TEST before the code!**"
+ > "Create src/tdd_template/main.py (or any new file) to make this test pass
 
 ## The TDD Rule
 
@@ -44,6 +53,4 @@ pre-commit run --all-files
 pytest --cov=src        # with coverage
 \`\`\`
 
-This template is open-source (MIT license) – fork it, modify it, and share it!
-
-Made with ❤️ by NicolasFromBelgium (inspired by LongVue)
+This template is open-source (MIT license) 
