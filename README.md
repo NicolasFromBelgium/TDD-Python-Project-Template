@@ -102,6 +102,25 @@ pytest -k "demo" # run only tests that contain "demo" in their name
 
 \`\`\`
 
+Run these commands in the windows command line interface (CLI), copy the output of the last command and paste it in your github ssh key manager
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+
+## On Windows
+Open Git Bash
+cd to working folder (e.g an empty folder TDD_project01 you just created)
+git clone repo
+cd repo
+python -m venv venv
+source venv/Scripts/activate
+pip install -r requirements.txt
+pytest
+git add .
+git commit -m "message"
+git push
+
+
 This template is open-source (MIT license) 
 
 
